@@ -19,6 +19,7 @@ const RocketsPage = () => {
       id={rocket.id}
       image={rocket.image}
       description={rocket.description}
+      reserved={rocket.reserved}
     />
   ));
 
