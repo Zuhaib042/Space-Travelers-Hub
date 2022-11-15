@@ -4,6 +4,7 @@ import axios from 'axios';
 // Actions
 const FETCH_ROCKETS = 'FETCH_ROCKETS';
 const RESERVE_ROCKET = 'RESERVE_ROCKET';
+const CANCEL_RESERVE = 'CANCEL_RESERVE';
 
 // state data
 const initialState = [];
@@ -21,6 +22,12 @@ const rocketReducer = (state = initialState, action = {}) => {
       return state.map((rocket) => {
         if (rocket.id !== action.payload) return rocket;
         return { ...rocket, reserved: true };
+      });
+    }
+    case CANCEL_RESERVE: {
+      return state.map((rocket) => {
+        if (rocket.id !== action.payload) return rocket;
+        return { ...rocket, reserved: false };
       });
     }
 
@@ -45,6 +52,11 @@ export const fetchRockets = createAsyncThunk(FETCH_ROCKETS, async () => {
 
 export const reserveRocket = (payload) => ({
   type: RESERVE_ROCKET,
+  payload,
+});
+
+export const cancelReserve = (payload) => ({
+  type: CANCEL_RESERVE,
   payload,
 });
 
