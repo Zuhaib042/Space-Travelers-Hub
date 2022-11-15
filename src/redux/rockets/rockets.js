@@ -3,28 +3,12 @@ import axios from 'axios';
 
 // Actions
 const FETCH_ROCKETS = 'FETCH_ROCKETS';
+const RESERVE_ROCKET = 'RESERVE_ROCKET';
 
 // state data
 const initialState = [];
 
 const baseUrl = 'https://api.spacexdata.com/v3/rockets';
-
-// async function fetch() {
-//   try {
-//     const response = await axios.get(baseUrl);
-//     const rockets = response.data;
-//     const res = Object.keys(rockets).map((id) => ({
-//       id: rockets[id].id,
-//       title: rockets[id].rocket_name,
-//       image: rockets[id].flickr_images[0],
-//       decription: rockets[id].description,
-//     }));
-//     console.log(res[1].id);
-//   } catch (error) {
-//     console.error(error);
-//   }
-// }
-// fetch();
 
 // Reducers
 
@@ -33,6 +17,13 @@ const rocketReducer = (state = initialState, action = {}) => {
     case 'FETCH_ROCKETS/fulfilled': {
       return action.payload;
     }
+    case RESERVE_ROCKET: {
+      return state.map((rocket) => {
+        if (rocket.id !== action.payload) return rocket;
+        return { ...rocket, reserved: true };
+      });
+    }
+
     default:
       return state;
   }
@@ -50,6 +41,11 @@ export const fetchRockets = createAsyncThunk(FETCH_ROCKETS, async () => {
     description: rocket.description,
   }));
   return res;
+});
+
+export const reserveRocket = (payload) => ({
+  type: RESERVE_ROCKET,
+  payload,
 });
 
 export default rocketReducer;
