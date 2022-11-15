@@ -19,7 +19,7 @@ const baseUrl = 'https://api.spacexdata.com/v3/rockets';
 //       image: rockets[id].flickr_images[0],
 //       decription: rockets[id].description,
 //     }));
-//     console.log(res);
+//     console.log(res[1].id);
 //   } catch (error) {
 //     console.error(error);
 //   }
@@ -31,7 +31,7 @@ const baseUrl = 'https://api.spacexdata.com/v3/rockets';
 const rocketReducer = (state = initialState, action = {}) => {
   switch (action.type) {
     case 'FETCH_ROCKETS/fulfilled': {
-      return [...state, action.payload];
+      return action.payload;
     }
     default:
       return state;
@@ -43,13 +43,12 @@ const rocketReducer = (state = initialState, action = {}) => {
 export const fetchRockets = createAsyncThunk(FETCH_ROCKETS, async () => {
   const response = await axios.get(baseUrl);
   const rockets = response.data;
-  const res = Object.keys(rockets).map((id) => ({
-    id: rockets[id].id,
-    title: rockets[id].rocket_name,
-    image: rockets[id].flickr_images[0],
-    decription: rockets[id].description,
+  const res = rockets.map((rocket) => ({
+    id: rocket.id,
+    title: rocket.rocket_name,
+    image: rocket.flickr_images[1],
+    description: rocket.description,
   }));
-  console.log(res);
   return res;
 });
 
