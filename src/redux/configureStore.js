@@ -5,8 +5,11 @@ import {
 } from '@reduxjs/toolkit';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
+import rocketReducer from './rockets/rockets';
 
-const reducer = combineReducers({});
+const reducer = combineReducers({
+  rocket: rocketReducer,
+});
 
 const store = configureStore(
   {
