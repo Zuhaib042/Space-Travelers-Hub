@@ -1,5 +1,18 @@
-// import { configureStore } from '@reduxjs/toolkit';
+import {
+  combineReducers,
+  configureStore,
+  applyMiddleware,
+} from '@reduxjs/toolkit';
+import thunk from 'redux-thunk';
+import logger from 'redux-logger';
 
-// const store = configureStore({});
+const reducer = combineReducers({});
 
-// export default store;
+const store = configureStore(
+  {
+    reducer,
+  },
+  applyMiddleware(thunk, logger),
+);
+
+export default store;
