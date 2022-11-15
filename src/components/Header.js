@@ -12,7 +12,7 @@ const Header = () => (
       <li className="px-4 text-[#017bfe]">
         <NavLink
           to="/"
-          style={(isActive) => ({
+          style={({ isActive }) => ({
             textDecoration: isActive ? 'underline' : 'none',
           })}
         >
@@ -22,7 +22,7 @@ const Header = () => (
       <li className="px-4 text-[#017bfe]">
         <NavLink
           to="/missionspage"
-          style={(isActive) => ({
+          style={({ isActive }) => ({
             textDecoration: isActive ? 'underline' : 'none',
           })}
         >
@@ -32,7 +32,7 @@ const Header = () => (
       <li className="px-4 border-l border-slate-500  text-[#017bfe]">
         <NavLink
           to="/myprofilepage"
-          style={(isActive) => ({
+          style={({ isActive }) => ({
             textDecoration: isActive ? 'underline' : 'none',
           })}
         >
