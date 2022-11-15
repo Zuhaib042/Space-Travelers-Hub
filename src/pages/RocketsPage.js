@@ -5,7 +5,9 @@ import { fetchRockets } from '../redux/rockets/rockets';
 
 const RocketsPage = () => {
   const dispatch = useDispatch();
+  // get rockets data from the store
   const allRockets = useSelector((state) => state.rocket);
+
   useEffect(() => {
     dispatch(fetchRockets());
   }, [dispatch]);
@@ -20,11 +22,7 @@ const RocketsPage = () => {
     />
   ));
 
-  return (
-    <div>
-      <ul>{rocketElements}</ul>
-    </div>
-  );
+  return <ul className="my-4">{rocketElements}</ul>;
 };
 
 export default RocketsPage;
