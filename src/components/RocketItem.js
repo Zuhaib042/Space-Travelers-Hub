@@ -12,7 +12,7 @@ const RocketItem = ({ id, title, description, image, reserved }) => {
         <img src={image} alt="rocket" />
       </div>
       <div className="col-span-7 mt-4 md:mt-0 ml-3">
-        <h3 className="text-xl text-slate-700">{title}</h3>
+        <h3 className="text-xl">{title}</h3>
         <p className="text-[0.8rem] ">
           {reserved && (
             <span className="bg-cyan-500 text-white px-1 rounded mr-1">
