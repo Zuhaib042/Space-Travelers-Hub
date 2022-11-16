@@ -7,3 +7,24 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.heading,
+.table-body {
+  display: flex;
+}
+
+.col1 {
+  width: 10%;
+}
+
+.col2 {
+  width: 70%;
+}
+
+.col3 {
+  width: 10%;
+}
+
+.col4 {
+  width: 10%;
+}
