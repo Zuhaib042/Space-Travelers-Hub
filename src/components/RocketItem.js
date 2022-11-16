@@ -15,7 +15,7 @@ const RocketItem = ({ id, title, description, image, reserved }) => {
         <h3 className="text-xl">{title}</h3>
         <p className="text-[0.8rem] ">
           {reserved && (
-            <span className="bg-cyan-500 text-white px-1 rounded mr-1">
+            <span className="bg-cyan-500 text-white px-1 rounded mr-[4px]">
               reserved
             </span>
           )}
