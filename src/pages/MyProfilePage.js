@@ -50,14 +50,14 @@ function MyProfilePage() {
   return (
     <section className="table-container">
       <div className="missions">
-        <h2>My Missions</h2>
+        <span className="text-2xl">My Missions</span>
+        {!missiondata.length ? (<span>There are no missions joined.</span>) : null }
         <div className="items-list">
-          {!missiondata.length ? (<p>There are no missions joined.</p>) : null }
           {missiondata && missiondata.map((elem) => (
             <div className="list-box" key={elem.missionid}>
-              <h3 className="list-name">
+              <span className="list-name">
                 {elem.missionName}
-              </h3>
+              </span>
               <button className="remBtn" type="button" id={elem.missionid} onClick={cancelmissionHandler}>
                 Cancel
               </button>

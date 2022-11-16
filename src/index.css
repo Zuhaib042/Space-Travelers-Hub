@@ -28,3 +28,31 @@
 .col4 {
   width: 10%;
 }
+
+.table-container {
+  padding: 2rem 4%;
+}
+
+.missions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.items-list {
+  border: 1px solid grey;
+  border-radius: 3px;
+  width: 50%;
+
+}
+
+.list-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 1px solid grey;
+  padding: 1rem;
+}
+
+button {
+  outline: auto;
+}
