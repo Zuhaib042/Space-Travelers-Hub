@@ -1,14 +1,35 @@
-const Missionscard = () => (
-  <div className="table-body">
-    <div className="col1">Thaicom</div>
-    <div className="col2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-    <div className="col3">
-      <span className="badge2">Not A Member</span>
-    </div>
-    <div className="col4">
-      <button className="join" type="submit">Join Mission</button>
-    </div>
-  </div>
-);
+/* eslint-disable react/prop-types */
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import { unjoinMission, joinMission } from '../redux/missions/MissionsSlice';
 
-export default Missionscard;
+const Missioncard = ({
+  missionname, description, id, missionjoin,
+}) => {
+  const dispatch = useDispatch();
+  const missionSwitchHandler = (event) => {
+    dispatch(joinMission(event.target.id));
+  };
+
+  const unjoinswitchhandler = (event) => {
+    dispatch(unjoinMission(event.target.id));
+  };
+  return (
+    <div className="mission-card">
+      <div className="mission">
+        <div className="table-body">
+          <div className="col1">{missionname}</div>
+          <div className="col2">{description}</div>
+          <div className="col3">
+            {missionjoin === false ? (<span className="badge">Not A Member</span>) : (<span className="badge">Active Member</span>)}
+          </div>
+          <div className="col4">
+            {missionjoin === false ? (<button className="join-btn" type="submit" id={id} onClick={missionSwitchHandler}>Join Mision</button>) : (<button className="join-btn" type="submit" id={id} onClick={unjoinswitchhandler}>Leave Mission</button>)}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Missioncard;
