@@ -9,7 +9,9 @@ const RocketsPage = () => {
   const allRockets = useSelector((state) => state.rocket);
 
   useEffect(() => {
-    dispatch(fetchRockets());
+    if (allRockets.length === 0) {
+      dispatch(fetchRockets());
+    }
   }, [dispatch]);
 
   const rocketElements = allRockets.map((rocket) => (
