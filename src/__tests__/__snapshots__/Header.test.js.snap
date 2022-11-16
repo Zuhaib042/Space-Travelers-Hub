@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header should render header correctly 1`] = `
+<a
+  aria-current="page"
+  class="active"
+  href="/"
+  style="text-decoration: underline;"
+>
+  Rockets
+</a>
+`;
+
+exports[`Header should render header correctly 2`] = `
+<a
+  class=""
+  href="/missionspage"
+  style="text-decoration: none;"
+>
+  Missions
+</a>
+`;
