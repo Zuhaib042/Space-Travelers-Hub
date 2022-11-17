@@ -6,7 +6,7 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="mt-4 grid grid-cols-1 md:grid-cols-2 md:gap-x-2 gap-y-2 mx-auto w-[75%]"
+        class="mt-4 grid grid-cols-1 md:grid-cols-2 md:gap-x-8 gap-y-6 mx-auto ml-8 mr-12"
       >
         <div
           class=""
@@ -16,15 +16,6 @@ Object {
           >
             Missions
           </h2>
-          <ul
-            class=" mt-3"
-          >
-            <li
-              class="border"
-            >
-              Mars
-            </li>
-          </ul>
         </div>
         <div
           class=""
@@ -40,7 +31,7 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="mt-4 grid grid-cols-1 md:grid-cols-2 md:gap-x-2 gap-y-2 mx-auto w-[75%]"
+      class="mt-4 grid grid-cols-1 md:grid-cols-2 md:gap-x-8 gap-y-6 mx-auto ml-8 mr-12"
     >
       <div
         class=""
@@ -50,15 +41,6 @@ Object {
         >
           Missions
         </h2>
-        <ul
-          class=" mt-3"
-        >
-          <li
-            class="border"
-          >
-            Mars
-          </li>
-        </ul>
       </div>
       <div
         class=""
