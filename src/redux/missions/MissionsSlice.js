@@ -40,6 +40,7 @@ const missionsSlice = createSlice({
         missionid: elem.mission_id,
         missionName: elem.mission_name,
         missionDesc: elem.description,
+        missionjoin: false,
       }));
       return missions;
     },
