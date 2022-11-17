@@ -8,24 +8,29 @@ const Missionlist = () => {
   const dispatch = useDispatch();
   const mission = useSelector((state) => state.missions);
   useEffect(() => {
-    dispatch(fetchMissionsApi());
+    if (mission.length === 0) {
+      dispatch(fetchMissionsApi());
+    }
   }, []);
   return (
     <div>
-      <div className="heading">
-        <div className="col1">Mission</div>
-        <div className="col2">Description</div>
-        <div className="col3">Status</div>
+      <div className="mr-8 mt-6 ml-6 grid border border-zinc-300 divide-x-[1px] divide-zinc-300 grid-cols-7">
+        <div className="col-span-1 font-bold py-2 pl-2">Mission</div>
+        <div className="col-span-4 font-bold py-2 pl-2">Description</div>
+        <div className="col-span-1 font-bold py-2 pl-2">Status</div>
+        <div className="col-span-1" />
       </div>
-      { mission.map((item) => (
-        <Missionscard
-          key={item.missionid}
-          missionname={item.missionName}
-          description={item.missionDesc}
-          id={item.missionid}
-          missionjoin={item.missionjoin}
-        />
-      )) }
+      <ul className="mb-6 mission-ul">
+        {mission.map((item) => (
+          <Missionscard
+            key={item.missionid}
+            missionname={item.missionName}
+            description={item.missionDesc}
+            id={item.missionid}
+            missionjoin={item.missionjoin}
+          />
+        ))}
+      </ul>
     </div>
   );
 };

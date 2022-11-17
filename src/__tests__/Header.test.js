@@ -10,7 +10,6 @@ describe('Header', () => {
       </Router>,
     );
     const rocketsTag = screen.getByText(/rockets/i);
-
     expect(rocketsTag).toMatchSnapshot();
   });
   it('should render header correctly', () => {
