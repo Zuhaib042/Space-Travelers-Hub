@@ -21,7 +21,7 @@
 
 ## Live Demo (if available)
 
-[Live Demo Link](https://benevolent-boba-3c0b0c.netlify.app)
+[Live Demo Link](https://symphonious-marshmallow-1c5d68.netlify.app)
 
 ## Getting Started
 
